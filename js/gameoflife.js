@@ -44,7 +44,9 @@ const printCells = (state) => {
   return accumulator;
 };
 
-const getNeighborsOf = ([x, y]) => { };
+const getNeighborsOf = ([x, y]) => {
+  return getNeighborsOf(cell).filter((n) => contains.bind(state)(n));
+};
 
 const getLivingNeighbors = (cell, state) => { };
 
