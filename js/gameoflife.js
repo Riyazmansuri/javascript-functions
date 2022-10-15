@@ -44,22 +44,17 @@ const printCells = (state) => {
   return accumulator;
 };
 
-const getNeighborsOf = ([x, y]) => {
+const getNeighborsOf = ([x, y]) => [
   [x - 1, y + 1], [x, y + 1], [x + 1, y + 1],
-    [x - 1, y], [x + 1, y],
-    [x - 1, y - 1], [x, y - 1], [x + 1, y - 1]
-};
+  [x - 1, y], [x + 1, y],
+  [x - 1, y - 1], [x, y - 1], [x + 1, y - 1]
+];
 
 const getLivingNeighbors = (cell, state) => {
-  return getNeighborsOf(cell).filter((n) => contains.bind(state)(n));
 };
 
 const willBeAlive = (cell, state) => {
-  const livingNeighbors = getLivingNeighbors(cell, state);
-  return (
-    livingNeighbors.length === 3 ||
-    (contains.call(state, cell) && livingNeighbors.length === 2)
-  );
+
 };
 
 const calculateNext = (state) => { };
